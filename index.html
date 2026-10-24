@@ -34,6 +34,11 @@
   a:hover { text-decoration: underline; }
   .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
+  /* ---------- responsive safety ---------- */
+  /* Long URLs (share links) must never widen the page: `anywhere` gives
+     soft-break opportunities that also shrink min-content in flex/grid. */
+  body { overflow-wrap: anywhere; }
+
   /* ---------- nav ---------- */
   nav {
     display: flex; align-items: center; justify-content: space-between;
@@ -76,6 +81,8 @@
     display: flex; flex-direction: column; gap: 8px; text-align: left;
   }
   .flow div { display: flex; gap: 10px; align-items: baseline; }
+  .flow div > * { min-width: 0; }
+  .flow div > b { min-width: max-content; } /* keep "1." whole */
   .flow b { color: var(--text); font-weight: 600; }
   .flow .arrow { color: var(--accent); }
 

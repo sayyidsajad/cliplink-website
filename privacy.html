@@ -12,8 +12,11 @@
 <style>
 :root { color-scheme: light dark; }
 * { box-sizing: border-box; }
-body { margin: 0; background: #0e1016; color: #e8eaf1; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; }
+body { margin: 0; background: #0e1016; color: #e8eaf1; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; overflow-wrap: anywhere; }
 main { max-width: 780px; margin: 0 auto; padding: 40px 22px 80px; }
+.tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+/* Inside the scrollable table, let words stay whole; the wrapper scrolls. */
+.tbl-scroll table, .tbl-scroll table th, .tbl-scroll table td { overflow-wrap: normal; }
 h1 { font-size: 26px; margin: 18px 0 4px; }
 h2 { font-size: 18px; margin: 34px 0 8px; color: #9ac0ff; }
 h3 { font-size: 15px; margin: 22px 0 6px; }
@@ -21,7 +24,7 @@ p, li { font-size: 14.5px; color: #c6cddc; }
 a { color: #7db3ff; }
 .updated { font-size: 13px; color: #8b93a7; }
 .note { background: #1a2b45; border: 1px solid #2e4a75; border-radius: 10px; padding: 12px 16px; font-size: 13.5px; }
-table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13.5px; }
+table { border-collapse: collapse; width: 100%; min-width: 540px; margin: 12px 0; font-size: 13.5px; }
 th, td { border: 1px solid #2b3242; padding: 8px 10px; text-align: left; color: #c6cddc; }
 th { background: #171c26; color: #9ac0ff; }
 header.site { text-align: center; padding: 18px 0 0; }
@@ -40,6 +43,7 @@ header.site a { text-decoration: none; font-weight: 700; color: #e8eaf1; }
 <p>This policy covers the hosted Service at <code>api.cliplink.workers.dev</code> and the public <a href="index.html">website</a>. If you self-host your own backend, you are the controller of that deployment and should review <code>backend/src/*</code> (fully auditable) plus your own providers' policies.</p>
 
 <h2>2. Data that exists, and for how long</h2>
+<div class="tbl-scroll">
 <table>
 <tr><th>Data</th><th>What it is</th><th>Kept for</th><th>Why</th></tr>
 <tr><td>Uploaded file</td><td>The bytes you share, stored encrypted at rest by our storage provider, in a <b>private</b> bucket; downloads go through short-lived signed URLs</td><td>Until link expiry (≤24 h) or earlier revocation; deleted by an automated cleanup job</td><td>To make your share work</td></tr>
@@ -47,6 +51,7 @@ header.site a { text-decoration: none; font-weight: 700; color: #e8eaf1; }
 <tr><td>Rate-limit counter</td><td>Upload count per install identifier, and the requesting client's <b>IP address</b>, stored only inside the same short-lived share row</td><td>≈ 7 days, then permanently deleted</td><td>Abuse prevention (blocking flooding and bulk misuse)</td></tr>
 <tr><td colspan="4">No names. No e-mail addresses. No phone numbers. No cookies. No other logs. No location data beyond the raw IP above. No advertising or analytics of any kind.</td></tr>
 </table>
+</div>
 
 <h2>3. What we deliberately do <em>not</em> do</h2>
 <ul>
