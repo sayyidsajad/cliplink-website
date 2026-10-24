@@ -66,7 +66,8 @@ python3 -m http.server 8080      # from this directory
   - `https://sayyidsajad.github.io/cliplink-website/` — this site, HTTP 200
   - `https://sayyidsajad.github.io/cliplink-website/terms.html` — Terms of Use (HTTP 200)
   - `https://sayyidsajad.github.io/cliplink-website/privacy.html` — Privacy Policy (HTTP 200)
-  - `https://github.com/sayyidsajad/cliplink/issues/new?template=abuse-report.md` — abuse/grievance channel
+  - `sayyidsajada4s@gmail.com` — public abuse/DMCA/grievance mailbox (mailto link)
+  - `https://github.com/sayyidsajad/cliplink/issues/new?template=abuse-report.md` — abuse/grievance channel (alternative)
   - `https://github.com/sayyidsajad/cliplink` — main repo
   - `https://github.com/sayyidsajad/cliplink/releases/latest` — latest DMG
   - `https://github.com/sponsors/sayyidsajad` — HTTP 200 (profile live)
