@@ -16,6 +16,8 @@ analytics, no trackers, no third-party JavaScript.
 
 ```
 index.html     the whole site (inline CSS/JS, single file)
+terms.html     Terms of Use of the hosted service (and the OSS software)
+privacy.html   Privacy Policy (DPDP-2023-aware; data-minimal design)
 favicon.svg    simple inline SVG
 ```
 
@@ -62,6 +64,9 @@ python3 -m http.server 8080      # from this directory
   `#support` section of `index.html` — plain `<a href>`s.
 - **Verified outbound links** (checked 2026-10-24):
   - `https://sayyidsajad.github.io/cliplink-website/` — this site, HTTP 200
+  - `https://sayyidsajad.github.io/cliplink-website/terms.html` — Terms of Use (HTTP 200)
+  - `https://sayyidsajad.github.io/cliplink-website/privacy.html` — Privacy Policy (HTTP 200)
+  - `https://github.com/sayyidsajad/cliplink/issues/new?template=abuse-report.md` — abuse/grievance channel
   - `https://github.com/sayyidsajad/cliplink` — main repo
   - `https://github.com/sayyidsajad/cliplink/releases/latest` — latest DMG
   - `https://github.com/sponsors/sayyidsajad` — HTTP 200 (profile live)
