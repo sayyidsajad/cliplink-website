@@ -9,7 +9,7 @@
 <meta property="og:description" content="macOS menu-bar app: file copy → expiring share link, automatically. Free, open source, privacy-first.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src https://api.github.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src https://api.github.com; img-src 'self' data: https://img.shields.io; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <style>
   :root {
@@ -146,6 +146,12 @@
       <a class="btn btn-ghost" href="https://github.com/sayyidsajad/cliplink">View source on GitHub</a>
     </div>
     <div class="version-note" id="version-note">latest release · macOS 13+ · free &amp; open source</div>
+    <div class="badges" style="margin-top:14px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+      <img src="https://img.shields.io/github/actions/workflow/status/sayyidsajad/cliplink/ci.yml?branch=main&label=build" alt="build status">
+      <img src="https://img.shields.io/github/v/release/sayyidsajad/cliplink" alt="latest release">
+      <img src="https://img.shields.io/github/downloads/sayyidsajad/cliplink/total" alt="downloads">
+      <img src="https://img.shields.io/github/license/sayyidsajad/cliplink" alt="MIT license">
+    </div>
 
     <div class="flow">
       <div><b>1.</b> <span>Copy any file in&nbsp;<b>Finder</b> <span class="arrow">→</span> menu-bar icon lights up and uploads it</span></div>
@@ -177,13 +183,15 @@
   </section>
 
   <section id="privacy" class="privacy">
-    <h3 class="section">How your data is handled</h3>
+    <h3 class="section">Trust &amp; transparency</h3>
     <ul>
-      <li><b>Nothing is permanent.</b> Links expire in 24 h; the stored object is deleted right after by a cleanup job.</li>
-      <li><b>Download URLs are unguessable</b> (random tokens, no look-alike characters).</li>
-      <li><b>Objects are private</b> — downloads are brokered by the server (short-lived signed URLs) and checked for expiry/revocation on every request.</li>
-      <li><b>Storage is budget-capped:</b> usage is enforced below the free tier, old files evicted first — the service can never silently hold your data forever, nor surprise anyone with a bill.</li>
-      <li><b>Fully auditable:</b> the whole backend is <a href="https://github.com/sayyidsajad/cliplink/tree/main/backend">~2 files of JavaScript</a>, open source.</li>
+      <li><b>Nothing is permanent.</b> Links expire in 24 h and the stored object is deleted right after by a cleanup job (<a href="https://github.com/sayyidsajad/cliplink/blob/main/backend/src/index.js" rel="noopener">verify in source</a>).</li>
+      <li><b>Download URLs are unguessable</b> — random tokens, no look-alike characters.</li>
+      <li><b>Storage objects are private.</b> Downloads are brokered by the server through short-lived signed URLs that only the server ever mints (<a href="https://github.com/sayyidsajad/cliplink/blob/main/backend/src/supabase.js" rel="noopener">verify in source</a>).</li>
+      <li><b>Storage is budget-capped server-side:</b> usage is enforced strictly below the free tier, oldest files evicted first — the service can never silently hold your data forever, and no one can ever be surprised by a bill.</li>
+      <li><b>Revoke anything instantly.</b> Share pages answer with a friendly “revoked” state, then 404 after retention.</li>
+      <li><b>The whole backend is ~2 files of JavaScript</b> — auditable in five minutes: <a href="https://github.com/sayyidsajad/cliplink/tree/main/backend" rel="noopener">read them here</a>.</li>
+      <li><b>Found an issue?</b> See our <a href="https://github.com/sayyidsajad/cliplink/blob/main/SECURITY.md" rel="noopener">security policy</a> — reports welcome and answered quickly.</li>
     </ul>
   </section>
 
@@ -205,8 +213,8 @@
 
   <footer>
     <div class="wrap">
-      <span>MIT licensed · built with Swift, Cloudflare Workers, D1 &amp; Supabase</span>
-      <span><a href="https://github.com/sayyidsajad/cliplink/releases/latest">Releases</a> · <a href="https://github.com/sayyidsajad/cliplink">GitHub</a></span>
+      <span>MIT licensed · built with Swift, Cloudflare Workers, D1 &amp; Supabase · <a href="https://github.com/sayyidsajad/cliplink/blob/main/LICENSE">License</a> · <a href="https://github.com/sayyidsajad/cliplink/blob/main/SECURITY.md">Security</a> · <a href="#privacy">Privacy</a></span>
+      <span><a href="https://github.com/sayyidsajad/cliplink/releases/latest">Releases</a> · <a href="https://github.com/sayyidsajad/cliplink">GitHub</a> · <a href="https://github.com/sayyidsajad/cliplink-website">This site's source</a></span>
     </div>
   </footer>
 </div>
