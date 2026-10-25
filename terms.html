@@ -34,7 +34,7 @@ header.site a { text-decoration: none; font-weight: 700; color: #e8eaf1; }
 <h1>Terms of Use</h1>
 <p class="updated">Last updated: 24 October 2026. Operator: <b>Sayyid Sajad</b> (individual, India).</p>
 
-<div class="note"><b>Plain-language summary:</b> ClipLink is a free, open-source tool. You may paste a link to any file <em>you have the right to share</em>. You may not use the service for illegal content. Everything is provided "as is" with no warranties. The service stores files only temporarily (they auto-expire) and cooperates with valid takedown requests.</div>
+<div class="note"><b>Plain-language summary:</b> ClipLink is a free, open-source tool. You may paste a link to any file <em>you have the right to share</em>. You may not use the service for illegal content. Everything is provided "as is" with no warranties. Files live only in your own Drive and auto-expire; we cooperate with valid takedown requests.</div>
 
 <h2>1. What these terms cover</h2>
 <p>These Terms of Use govern (a) your use of the hosted ClipLink service at <code>api.cliplink.workers.dev</code> (the "Service"), operated by Sayyid Sajad ("we", "us", the "Operator"), and (b) your use of the ClipLink macOS application and CLI, which are released as open-source software under the <a href="https://github.com/sayyidsajad/cliplink/blob/main/LICENSE">MIT License</a>. By using the Service or the App you accept these terms.</p>
@@ -42,10 +42,11 @@ header.site a { text-decoration: none; font-weight: 700; color: #e8eaf1; }
 <h2>2. The service</h2>
 <p>ClipLink lets you upload a file and receive a short-lived, unguessable download link. Key characteristics:</p>
 <ul>
-<li>Links expire automatically (24 hours by default) and the stored file is deleted;</li>
+<li>Files are stored in <b>your own Google Drive</b> (you connect the account in the app; scope <code>drive.file</code> — only files ClipLink creates are visible to it) and the copy is deleted on your Drive when the link expires or is revoked;</li>
+<li>Links expire automatically (24 hours by default) and the file copy is deleted;</li>
 <li>No accounts, no logins, no tracking of end-users;</li>
 <li>Anyone who obtains the link (or its owner) can download the file until it expires or is revoked;</li>
-<li>The Service is free, runs on third-party free tiers (Cloudflare, Supabase), and can be modified, limited, paused, or discontinued at any time without notice.</li>
+<li>The Service is free, runs on free-tier infrastructure (Cloudflare) plus <b>your own</b> Google Drive for file storage, and can be modified, limited, paused, or discontinued at any time without notice. The file content remains under your control at all times; the Operator is never its custodian.</li>
 </ul>
 
 <h2>3. Acceptable use — you are responsible for what you share</h2>
