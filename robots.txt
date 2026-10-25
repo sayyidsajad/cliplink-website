@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sayyidsajad.github.io/cliplink-website/sitemap.xml
+Sitemap: https://cliplink.is-a.dev/sitemap.xml
